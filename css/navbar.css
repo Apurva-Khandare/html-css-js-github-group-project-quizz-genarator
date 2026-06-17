@@ -86,11 +86,14 @@ body{
    .mobile-menu.active{
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: start;
     
       gap: 15px;
       color: white;
    }
-
+.short-para{
+   margin-top: 15px;
+   font-size: 10px;
+}
  
 }
