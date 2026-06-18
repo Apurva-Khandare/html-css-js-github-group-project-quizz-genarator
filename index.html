@@ -113,6 +113,38 @@
             <img src="./images/hero-section-img.svg" height="450px">
         </div>
     </div>
+    
+       <section class="stats-section">
+
+    <h2 class="stats-heading">
+        Our Impact in Numbers 🚀
+    </h2>
+
+    <div class="stats-container">
+
+        <div class="stat-card">
+            <h3>10K+</h3>
+            <p>Quizzes Played</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>5K+</h3>
+            <p>Active Players</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>100+</h3>
+            <p>Categories</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>50K+</h3>
+            <p>Questions Answered</p>
+        </div>
+
+    </div>
+
+</section>
 
     <footer class="footer">
 
@@ -363,6 +395,33 @@ leaderboardLink.addEventListener(
     "click",
     checkLogin
 );
+
+
+
+
+    const startQuizBtn =
+document.getElementById("start-quizz");
+
+startQuizBtn.addEventListener("click", function(e){
+
+    const isLoggedIn =
+    localStorage.getItem("isLoggedIn");
+
+    if(isLoggedIn !== "true"){
+
+        e.preventDefault();
+
+        alert("Please Login or Sign Up first to start the quiz!");
+
+    }
+    else{
+
+        window.location.href =
+        "./pages/dashboard.html";
+
+    }
+
+});
          </script>
 
 
