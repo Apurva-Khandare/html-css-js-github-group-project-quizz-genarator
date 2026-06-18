@@ -18,7 +18,7 @@
            <div class="nav-links" id="links"><a>Home</a>
             <a>Categories</a>
             <a>leaderboard</a> </div>
-           <div class="login-button-contaner" > <button type="button" class="login-btn"><a>login</a></button>
+           <div class="login-button-contaner" > <button type="button" class="login-btn" id="logn-btn"><a>login</a></button>
             <button type="button" class="singup-btn"><a>sign up</a></button></div></div>
 
             <!--mobile menu-->
@@ -33,7 +33,7 @@
        
     </header><hr>
 
-    <!--login singup modal code-->
+    <!--login  modal code-->
     <div class="modal" id="lgn-modal">
          
         <div class="modal-ctn">
@@ -81,12 +81,15 @@
         const loginmodal =document.getElementById("lgn-modal");
         const close =document.getElementById("close-lgn");
 
-        console.log(loginbtn);
-        console.log(loginmodal);
+       
         
         
         loginbtn.addEventListener("click",()=>{
         loginmodal.style.display="block";
+    });
+
+    close.addEventListener("click",()=>{
+        loginmodal.style.display="none";
     });
     </script>
 </body>
