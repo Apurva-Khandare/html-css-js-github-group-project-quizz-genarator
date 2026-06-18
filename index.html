@@ -91,7 +91,9 @@
                 <button type="submit">
                     Create account
                 </button>
-
+<p>
+    Already have an account?<a href="#" id="openLogin">Login</a>
+</p>
             </form>
            </div>
 
@@ -134,6 +136,140 @@
         close.addEventListener("click", () => {
             loginmodal.style.display = "none";
         });
+
+        // Signup Modal
+const signupModal = document.getElementById("signupModal");
+const signupClose = document.getElementById("signupClose");
+
+// Forms
+const signupForm = document.getElementById("signupForm");
+const loginForm = document.getElementById("login-form");
+
+// Links
+const openSignup = document.getElementById("openSignup");
+const openLogin = document.getElementById("openLogin");
+
+
+// Login -> Signup
+
+openSignup.addEventListener("click",(e)=>{
+
+    e.preventDefault();
+
+    loginmodal.style.display="none";
+
+    signupModal.style.display="block";
+
+});
+
+
+// Signup -> Login
+
+openLogin.addEventListener("click",(e)=>{
+
+    e.preventDefault();
+
+    signupModal.style.display="none";
+
+    loginmodal.style.display="block";
+
+});
+
+
+// Signup Logic
+
+signupForm.addEventListener("submit",(e)=>{
+
+    e.preventDefault();
+
+    const name =
+    document.getElementById("name").value;
+
+    const email =
+    document.getElementById("email").value;
+
+    const password =
+    document.getElementById("password").value;
+
+    let users =
+    JSON.parse(localStorage.getItem("users"))
+    || [];
+
+    const alreadyExists =
+    users.some(user=>user.email===email);
+
+    if(alreadyExists){
+
+        alert("User already exists!");
+
+        return;
+    }
+
+    users.push({
+        name,
+        email,
+        password
+    });
+
+    localStorage.setItem(
+        "users",
+        JSON.stringify(users)
+    );
+
+    alert("Signup Successful");
+    localStorage.setItem("isLoggedIn","true");
+
+localStorage.setItem("currentUser", name);
+
+window.location.href = "./../pages/dashboard.html";
+
+});
+
+
+
+// Login Logic
+
+loginForm.addEventListener("submit",(e)=>{
+
+    e.preventDefault();
+
+    const email =
+    document.getElementById("login-email").value;
+
+    const password =
+    document.getElementById("lgn-pswrd").value;
+
+    let users =
+    JSON.parse(localStorage.getItem("users"))
+    || [];
+
+    const user =
+    users.find(user=>
+
+        user.email===email &&
+        user.password===password
+
+    );
+
+    if(user){
+
+    alert("Login Successful");
+
+    localStorage.setItem("isLoggedIn","true");
+
+    localStorage.setItem("currentUser", user.name);
+
+    window.location.href = "./../pages/dashboard.html";
+
+}
+    else{
+
+        alert("Invalid Email or Password");
+
+
+    }
+
+});
          </script>
 
 <!-- Footer Part -->
