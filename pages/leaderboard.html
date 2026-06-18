@@ -1,11 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaderboard</title>
 </head>
+
 <body>
-    
+    <div class="container">
+
+        <h1>🏆 Quiz Generator Leaderboard</h1>
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+
+            <tbody id="leaderboardBody">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <script>
+
+        // Demo Players Data
+
+        let players = [
+            {
+                name: "Rahul",
+                score: 950
+            },
+            {
+                name: "Priya",
+                score: 900
+            },
+            {
+                name: "Aman",
+                score: 850
+            }
+        ];
+
+        // Current User Data LocalStorage मधून
+
+        let currentUser = JSON.parse(
+            localStorage.getItem("user")
+        );
+
+        if (currentUser) {
+
+            players.push({
+                name: currentUser.name,
+                score: currentUser.score || 0
+            });
+
+        }
+
+        // Score Descending Sort
+
+        players.sort((a, b) => b.score - a.score);
+
+        let tbody =
+            document.getElementById("leaderboardBody");
+
+        // Table Generate
+
+        players.forEach((player, index) => {
+
+            let rank;
+
+            if (index === 0) {
+                rank = "🥇";
+            }
+            else if (index === 1) {
+                rank = "🥈";
+            }
+            else if (index === 2) {
+                rank = "🥉";
+            }
+            else {
+                rank = index + 1;
+            }
+
+            tbody.innerHTML += `
+<tr>
+<td class="top">${rank}</td>
+<td>${player.name}</td>
+<td>${player.score}</td>
+</tr>
+`;
+
+        });
+
+    </script>
+
 </body>
+
 </html>
