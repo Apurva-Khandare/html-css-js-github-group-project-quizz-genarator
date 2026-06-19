@@ -13,12 +13,13 @@
 
 .logo-contaner {
     color: #6366F1;
-    font-size: 25px;
+    font-size: 23px;
+    font-weight: bold;
 }
 
 .logo-contaner::first-letter {
     color: orange;
-    font-size: 30px;
+    font-size: 2rem;
 }
 
 .nav-links {
@@ -32,10 +33,13 @@
 .nav-links a{
     text-decoration: none;
     color: white;
+     transition: transform 0.2s ease; 
 }
 .nav-links a:hover{
     text-decoration: underline orange;
-    transition: 0.2s ease;
+   
+    transform: translateY(-3px); 
+    color: orange;
     
 
 }
@@ -49,14 +53,17 @@
 }
 
 .login-btn {
-    border: 2px solid #6366F1;
-    background-color: transparent;
-    color: #6366F1;
-    padding: 5px 8px;
+    border: none;
+    background-color: #6366F1;
+    color: white;
+    padding: 7px 15px;
     font-size: 15px;
+    border-radius: 20px;
     cursor: pointer;
 }
-
+.login-btn:hover{
+    border: 2px solid orange;
+}
 .singup-btn {
 
     background-color: #6366F1;
@@ -69,7 +76,8 @@
 }
 
 body {
-    background-color: #0F172A;
+    background-color: #0d1222;
+    font-family: inherit;
 }
 
 .menu-btn {
