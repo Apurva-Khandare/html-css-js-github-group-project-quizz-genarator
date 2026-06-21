@@ -17,7 +17,7 @@ The platform includes timed quizzes, score tracking, category-based question set
 ## ✨ Features
 
 - 🔐 User Login & Signup
-- 📊 Personalized Dashboard
+- 📊 Dashboard
 - 📚 Multiple Quiz Categories
 - ⏱️ Quiz Timer Functionality
 - 🏆 Leaderboard Ranking System
@@ -73,21 +73,6 @@ Quiz-Master/
 
 ![home page](./images/)
 
-
-
-
-### Dashboard
-
-"Dashboard" (./images/dashboard.png)
-
-### Categories
-
-"Categories" (./images/categories.png)
-
-### Leaderboard
-
-"Leaderboard" (./images/leaderboard.png)
-
 ---
 
 ## 🎯 Project Use
@@ -106,7 +91,6 @@ The platform promotes continuous learning, self-assessment, and healthy competit
 - 📊 Detailed Performance Analytics
 - 📝 Quiz History Tracking
 - 🏅 Achievement Badges & Rewards
-- 🌙 Dark/Light Theme Toggle
 - 📧 Email Verification System
 - 🔍 Advanced Quiz Search & Filters
 
@@ -116,6 +100,7 @@ The platform promotes continuous learning, self-assessment, and healthy competit
 <a href="https://github.com/Surbhi-Patle-11/html-css-js-github-group-project-quizz-genarator/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Surbhi-Patle-11/html-css-js-github-group-project-quizz-genarator" />
 </a>
+
 ---
 
 ## 🙏 Acknowledgements
