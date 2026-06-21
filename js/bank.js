@@ -107,29 +107,38 @@ function checkAnswer(clickedButton, selectedOption) {
 }
 
 function nextQuestion() {
-
     currentQuestion++;
 
     if (currentQuestion < questions.length) {
         loadQuestion();
-    }
-    else {
+    } else {
+    
+        let playerName = localStorage.getItem("currentUser") || "Guest";
 
-        document.querySelector(".quiz-box").innerHTML =
-            `<h1 style="text-align:center;color:#1e3a8a;">
-            Your Quiz Completed
-        </h1>
+        let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
 
-        <h2 style="text-align:center;margin-top:20px;">
-            Your Score: ${score}/${questions.length}
-        </h2>
+        leaderboard.push({
+            name: playerName,
+            score: score
+        });
 
-        <button class="btn" style="display:block ;margin:20px auto;" onclick="location.reload()">
-            Restart Quiz
-        </button>
+        localStorage.setItem("leaderboard", JSON.stringify(leaderboard));
+
+        document.querySelector(".quiz-box").innerHTML = `
+            <h1 style="text-align:center;color:#1e3a8a;">🎉 Quiz Completed!</h1>
+            <h3 style="text-align:center;margin-top:10px;">Player: ${playerName}</h3>
+            <h2 style="text-align:center;margin-top:15px;">Your Score: ${score}/${questions.length}</h2>
+
+            <button class="btn" style="display:block;margin:20px auto;" onclick="window.location.href='../pages/leaderboard.html'">
+                View Leaderboard
+            </button>
+            <button class="btn" style="display:block;margin:20px auto;" onclick="location.reload()">
+                Restart Quiz
+            </button>
         `;
     }
 }
+
 
 function previousQuestion() {
 
