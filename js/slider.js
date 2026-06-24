@@ -8,10 +8,13 @@ const imagesArr = [
     "../images/slider-img-5.avif"
 ];
 
-let imgIndex = 0;
-
 const imgElement = document.getElementById("img");
 
+// Show a random image when page loads
+let imgIndex = Math.floor(Math.random() * imagesArr.length);
+imgElement.src = imagesArr[imgIndex];
+
+// Previous Button
 function prev() {
     if (imgIndex === 0) {
         imgIndex = imagesArr.length - 1;
@@ -22,6 +25,7 @@ function prev() {
     imgElement.src = imagesArr[imgIndex];
 }
 
+// Next Button
 function next() {
     if (imgIndex === imagesArr.length - 1) {
         imgIndex = 0;
@@ -32,5 +36,17 @@ function next() {
     imgElement.src = imagesArr[imgIndex];
 }
 
-/* Auto Slider */
-setInterval(next, 5000);
+// Random Image (No Repeat)
+function randomImage() {
+    let randomIndex;
+
+    do {
+        randomIndex = Math.floor(Math.random() * imagesArr.length);
+    } while (randomIndex === imgIndex);
+
+    imgIndex = randomIndex;
+    imgElement.src = imagesArr[imgIndex];
+}
+
+// Auto Random Slider Every 5 Seconds
+setInterval(randomImage, 5000);
