@@ -489,8 +489,8 @@ position: relative;
 .theme-icon{
     cursor:pointer;
     position: absolute;
-    top: 15px;
-    right: 40px;
+    top: 30px;
+    right: 8px;
     z-index: 100;
 }
 
