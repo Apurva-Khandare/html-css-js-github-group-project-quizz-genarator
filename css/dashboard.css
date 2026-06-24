@@ -128,41 +128,48 @@ body {
 
 /* hero section */
 .hero-features {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap; /* Keeps it responsive on mobile screens */
-  gap: 16px;
-  margin: 24px 0; /* Spacing above and below the feature line */
-  font-family: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Keeps it responsive on mobile screens */
+    gap: 16px;
+    margin: 24px 0;
+    /* Spacing above and below the feature line */
+    font-family: inherit;
 }
 
 .feature-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px; /* Space between the image icon and the text */
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    /* Space between the image icon and the text */
 }
 
 /* Fixes the default behavior of the <p> tag inside the item */
 .feature-item p {
-  margin: 0; /* Removes default browser spacing that breaks alignment */
-  color: #ffffff;
-  font-size: 0.95rem;
-  font-weight: 500;
-  letter-spacing: 0.3px;
-  white-space: nowrap; /* Prevents text from awkwardly splitting into two lines */
+    margin: 0;
+    /* Removes default browser spacing that breaks alignment */
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    /* Prevents text from awkwardly splitting into two lines */
 }
 
 .feature-icon {
-  display: block;
-  object-fit: contain;
-  /* height is already handled by your HTML height="20px" attribute */
+    display: block;
+    object-fit: contain;
+    /* height is already handled by your HTML height="20px" attribute */
 }
 
 .feature-divider {
-  color: rgba(255, 255, 255, 0.4); /* Subtle, elegant opacity for the dot */
-  font-size: 1rem;
-  user-select: none; /* Prevents users from accidentally highlighting the dot */
+    color: rgba(255, 255, 255, 0.4);
+    /* Subtle, elegant opacity for the dot */
+    font-size: 1rem;
+    user-select: none;
+    /* Prevents users from accidentally highlighting the dot */
 }
 
 .design-cards {
